@@ -135,7 +135,7 @@ GameObject:
   - component: {fileID: 9532244}
   - component: {fileID: 9532243}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Leonardo.ai Logo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
