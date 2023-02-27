@@ -113,7 +113,7 @@ public class GameStateManager : Singleton<GameStateManager>
         //FbDebug.Log("Player has new high score :" + Instance.score);
         
 
-        Application.LoadLevel("MainMenu");
+        Application.LoadLevel(1);
         Time.timeScale = 0.0f;
     }
 }
