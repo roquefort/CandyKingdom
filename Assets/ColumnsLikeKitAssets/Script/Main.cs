@@ -79,6 +79,7 @@ public class Main : MonoBehaviour
              //float xFactor = 0.01f;
 
              float xFactor = 0.01f *( GameStateManager.Level  );
+            Debug.Log($"GoDown: xFactor: {xFactor} | GameStateManager.Level: {GameStateManager.Level}");
             _newShape1.transform.localPosition = new Vector2(_newShape1.transform.localPosition.x, _newShape1.transform.localPosition.y - xFactor);
             _newShape2.transform.localPosition = new Vector2(_newShape2.transform.localPosition.x, _newShape2.transform.localPosition.y - xFactor);
             _newShape3.transform.localPosition = new Vector2(_newShape3.transform.localPosition.x, _newShape3.transform.localPosition.y - xFactor);
@@ -317,6 +318,7 @@ public class Main : MonoBehaviour
         GameStateManager.isCountingDown = false;
         GameStateManager.IsGamePaused = false;
         GameStateManager.IsGameOver = false;
+        GameStateManager.Level = 1;
         yield return new WaitForSecondsRealtime(1f);
         countdownText.text = string.Empty;
     }
