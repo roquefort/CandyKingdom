@@ -134,7 +134,13 @@ public class Main : MonoBehaviour
     {
         if (go.transform.localPosition.x > 0)
         {
-            var cell = _arrayOfShapes[(int)go.transform.localPosition.x - 1, (int)go.transform.localPosition.y];
+            int xPos = (int)go.transform.localPosition.x - 1;
+            int yPos = (int)go.transform.localPosition.y;
+
+            if (xPos >= _arrayOfShapes.GetLength(0) || xPos < 0 || yPos >= _arrayOfShapes.GetLength(1) || yPos < 0)
+                return;
+
+            var cell = _arrayOfShapes[xPos, yPos];
             if (cell == null)
             {
                 TweenParms parms = new TweenParms().Prop("position", new Vector3((int)go.transform.localPosition.x - 1, go.transform.localPosition.y, -1)).Ease(EaseType.EaseOutQuart);
