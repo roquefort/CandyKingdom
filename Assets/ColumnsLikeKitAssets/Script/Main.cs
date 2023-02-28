@@ -3,6 +3,7 @@ using System.Collections;
 using Holoville.HOTween;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 /// <summary>
 ///  This class is the main entry point of the game it should be attached to a gameobject and be instanciate in the scene
@@ -78,7 +79,7 @@ public class Main : MonoBehaviour
 
              //float xFactor = 0.01f;
 
-             float xFactor = 0.01f *( GameStateManager.Level  );
+             float xFactor = 5f *( GameStateManager.Level  ) * Time.deltaTime;
             Debug.Log($"GoDown: xFactor: {xFactor} | GameStateManager.Level: {GameStateManager.Level}");
             _newShape1.transform.localPosition = new Vector2(_newShape1.transform.localPosition.x, _newShape1.transform.localPosition.y - xFactor);
             _newShape2.transform.localPosition = new Vector2(_newShape2.transform.localPosition.x, _newShape2.transform.localPosition.y - xFactor);
@@ -100,6 +101,11 @@ public class Main : MonoBehaviour
             HOTween.To(_newShape3.transform, .4f, parms);
 
         }
+    }
+
+    public void GoBack()
+    {
+        SceneManager.LoadScene(1);
     }
 
     public void GoRight()
